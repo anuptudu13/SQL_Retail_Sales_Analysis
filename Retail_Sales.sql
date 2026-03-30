@@ -37,7 +37,7 @@ WHERE sale_date IS NULL
 	OR
     category IS NULL
 	OR
-    quantiy IS NULL
+    quantity IS NULL
 	OR
     price_per_unit IS NULL
     OR
@@ -59,7 +59,7 @@ WHERE sale_date IS NULL
 	OR
     category IS NULL
 	OR
-    quantiy IS NULL
+    quantity IS NULL
 	OR
     price_per_unit IS NULL
     OR
@@ -71,13 +71,13 @@ WHERE sale_date IS NULL
 -- How many sales are present in total?
 SELECT COUNT(*) AS total_sales FROM retail_sales;
 
--- How many unique customer are present?
+-- How many unique customers are present?
 SELECT COUNT(DISTINCT customer_id) AS customers FROM retail_sales;
 
 -- How many unique categories are there?
 SELECT COUNT(DISTINCT category) AS catetory FROM retail_sales;
 
--- Checking for dintinct categories
+-- Checking for distinct categories
 SELECT DISTINCT category FROM retail_sales;
 
 
@@ -119,7 +119,7 @@ WHERE total_sale > 1000;
 -- Q.6 Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.
 SELECT category, gender, COUNT(*) AS total_transactions FROM retail_sales
 GROUP BY category, gender
-ORDER BY 1;
+ORDER BY category;
 
 -- Q.7 Write a SQL query to calculate the average sale for each month. Find out best selling month in each year
 SELECT year, month, average_sales FROM
